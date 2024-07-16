@@ -1,0 +1,225 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/KALGonzalez/Python-Prep/blob/main/Ejercicio%2015/07/2024\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1VeMgfP8F2Sa"
+      },
+      "outputs": [],
+      "source": [
+        "ingresos=[5, 11, 24, 50, 12, 36]\n",
+        "\n",
+        "def acumular(datos):\n",
+        "  datos=sorted(datos)\n",
+        "  acum=0\n",
+        "  total=sum(datos)\n",
+        "  new=[]\n",
+        "  for i in datos:\n",
+        "    acum=acum+i\n",
+        "    new.append(acum/total)\n",
+        "  return new"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "N=[1 for _ in range(len(datos1))]\n",
+        "N"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1NLy7QivKN7k",
+        "outputId": "bbe0e7f1-a2d2-4e86-aae7-2f42eca7d3ed"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 1, 1]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def gini(datos):\n",
+        "  N=acumular([1 for _ in range(len(datos))])\n",
+        "  Y=acumular(datos)\n",
+        "  acumu=0\n",
+        "  for i in range(1,len(datos)):\n",
+        "    acumu= acumu+(Y[i-1]+Y[i])*(N[i]-N[i-1])\n",
+        "    print(acumu)\n",
+        "  return 1-acumu\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "4o8wo5n9LCNa"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "unidad=[1,1,1,1,1,1]"
+      ],
+      "metadata": {
+        "id": "1TL99JAkNJcT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "gini(unidad)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-YeOeeZwNNAa",
+        "outputId": "ba4c8194-2233-45ae-db7f-631dad6d9f8b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.02777777777777768"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "datos_edu=[25,34,40,50,50,80,270,300,400,500]\n",
+        "gini(datos_edu)\n",
+        "#N=acumular([1 for _ in range(len(datos_edu))])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7shAxGd5NSxX",
+        "outputId": "f783c212-1eac-47a6-f7bd-bfae53c40e46"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.004802744425385935\n",
+            "0.01383647798742138\n",
+            "0.028016009148084622\n",
+            "0.04791309319611206\n",
+            "0.07524299599771297\n",
+            "0.1225843339050886\n",
+            "0.20251572327044032\n",
+            "0.3224699828473414\n",
+            "0.4938822184105203\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.5061177815894797"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Y=[1,2,3,4,5]\n",
+        "N=[]"
+      ],
+      "metadata": {
+        "id": "oKbwr_x0N_Pi"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "datos=[10, 12, 50]"
+      ],
+      "metadata": {
+        "id": "KY4dLvMuOTQo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(1,len(datos)):\n",
+        "  print(i,i-1)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ifLyYZZFN8DS",
+        "outputId": "cc0f8b40-d57d-429c-c0f4-a721ea439193"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1 0\n",
+            "2 1\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
